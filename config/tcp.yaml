@@ -1,0 +1,8 @@
+
+name: vless-tcp
+server: 172.17.101.95
+port: 9090
+type: vless
+uuid: 27848739-7e62-4138-9fd3-098a63964b6b
+network: tcp
+tls: false

@@ -1,0 +1,14 @@
+name: vless-ws-https
+server: l2.subwayvpn.com
+serverName: l2.subwayvpn.com
+port: 443
+type: vless
+uuid: 27848739-7e62-4138-9fd3-098a63964b6b
+network: ws
+tls: true
+udp: true
+skip-cert-verify: false
+ws-opts:
+ headers:
+   Host: l2.subwayvpn.com
+ path: /pwcTmmpYnJ8

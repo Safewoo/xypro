@@ -1,0 +1,15 @@
+name: vless-ws-https-self-signed
+uuid: bafcd0bd-5325-45af-8747-454ffd844784
+server: 34.131.126.3
+port: 443
+serverName: hhoy.jncc.com
+type: vless
+udp: true
+network: ws
+tls: true
+skip-cert-verify: true
+ws-opts:
+ headers:
+   Host: hhoy.jncc.com
+ path: /Sul4
+

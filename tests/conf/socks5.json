@@ -1,0 +1,87 @@
+
+{
+    "log": {
+        "loglevel": "info"
+    },
+    "inbounds": [
+        {
+            "listen": "127.0.0.1",
+            "protocol": "socks",
+            "settings": {
+                "ip": "127.0.0.1",
+                "auth": "noauth",
+                "udp": true
+            },
+            "tag": "socksinbound",
+            "port": 1081
+        },
+        {
+            "listen": "127.0.0.1",
+            "protocol": "http",
+            "settings": {
+                "timeout": 0
+            },
+            "tag": "httpinbound",
+            "port": 8001
+        }
+    ],
+    "dns": {
+        "servers": [
+            "8.8.8.8"
+        ]
+    },
+    "outbounds": [
+        {
+            "protocol": "vless",
+            "sendThrough": "0.0.0.0",
+            "settings": {
+                "vnext": [
+                    {
+                        "address": "34.87.181.229",
+                        "port": 443,
+                        "users": [
+                            {
+                                "id": "2d500939-e15e-4a62-aed1-7d84f084156a",
+                                "email": "zhousystem9@gmail.com",
+                                "encryption": "none"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "tag": "safewoo-l1.safetun.net",
+            "streamSettings": {
+                "network": "ws",
+                "security": "tls",
+                "tlsSettings": {
+                    "serverName": "l1.safetun.net",
+                    "alpn": [
+                        "http/1.1"
+                    ],
+                    "allowInsecure": false,
+                    "allowInsecureCiphers": false
+                },
+                "wsSettings": {
+                    "path": "/MCMdmgYcjgQ",
+                    "headers": {
+                        "Host": "l1.safetun.net"
+                    }
+                }
+            },
+            "mux": {
+                "enabled": true,
+                "concurrency": 8
+            }
+        }
+    ],
+    "routing": {
+        "domainStrategy": "AsIs",
+        "rules": [
+            {
+                "type": "field",
+                "port": "0-65535",
+                "outboundTag": "safewoo-l1.safetun.net"
+            }
+        ]
+    }
+}
